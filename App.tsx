@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Board } from './components/Board';
 import { Controls } from './components/Controls';
-import { GridState, CellState, GameMode } from './types';
+import { GridState, GameMode } from './types';
 import { NEIGHBOR_OFFSETS } from './constants';
 import { solveGrid } from './utils/solver';
 
@@ -33,7 +33,7 @@ function App() {
   const [timer, setTimer] = useState(0); // in ms
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const timerStartRef = useRef<number | null>(null);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
 
   // Timer Logic
   const stopTimer = () => {
