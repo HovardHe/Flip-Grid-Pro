@@ -37,7 +37,6 @@ export const Cell: React.FC<CellProps> = ({ data, mode, onClick, solverHintIndex
     );
   }
 
-  const isPlayMode = mode === GameMode.PLAY;
   const isEditMode = mode === GameMode.EDIT;
   
   let bgColor = 'bg-surface';
