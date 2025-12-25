@@ -1,10 +1,9 @@
 import { GridState, SolverResult } from '../types';
-import { NEIGHBOR_OFFSETS } from '../constants';
 
 // Gaussian Elimination over GF(2)
 // Solves Ax = b where x is the moves vector and b is the difference between current and target state.
 
-export const solveGrid = (grid: GridState, size: number): SolverResult => {
+export const solveGrid = (grid: GridState, _size: number): SolverResult => {
   // 1. Identify active (non-hole) cells and map them to linear indices 0..N-1
   const activeCells = grid.filter(c => !c.isHole);
   const N = activeCells.length;
